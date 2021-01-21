@@ -1,0 +1,17 @@
+package com.java.dto;
+
+import java.sql.Timestamp;
+
+public class BoardDTO {
+	int bID;
+	String bName;
+	String bTitle;
+	String bContent;
+	Timestamp bDate;
+	int bHit;
+	int bGroup;
+	int bStep;
+	int bIndent;
+	
+
+}

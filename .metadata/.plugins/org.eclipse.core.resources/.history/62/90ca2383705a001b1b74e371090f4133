@@ -1,0 +1,38 @@
+<%@page import="java.util.Arrays"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%! String id ,name , pw ,major,protocol;
+		String[] hobbys;
+	%>
+	<%
+	name = request.getParameter("name");
+	id = request.getParameter("id");
+	pw = request.getParameter("pw");
+	major = request.getParameter("major");
+	protocol = request.getParameter("protocol");
+	
+	hobbys = request.getParameterValues("hobby"); 
+	
+	%>
+	
+	id : <%=id %>
+	name : <%=name %>
+	pw : <%=pw %>
+	major : <%=major %>
+	protocol : <%=protocol %>
+	hobby : <%=hobbys[1]%>
+	
+	
+	
+	
+	
+
+</body>
+</html>

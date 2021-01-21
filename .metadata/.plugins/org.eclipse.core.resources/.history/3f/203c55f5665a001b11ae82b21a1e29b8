@@ -1,0 +1,4 @@
+source.Board1.jar = src/
+bin.includes = META-INF/,\
+               jdk-11.0.7/lib/mysql-connector-java-8.0.23.jar,\
+               Board1.jar

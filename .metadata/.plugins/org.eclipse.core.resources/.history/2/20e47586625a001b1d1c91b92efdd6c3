@@ -1,0 +1,30 @@
+package com.java.jaejin.model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DbUtils {
+	
+	public static void main(String[] args) {
+		try {
+			getCon();
+			System.out.println("db정상 연결 ");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		};
+	}
+
+	
+	
+	public static Connection getCon() throws Exception {
+		final String URL = "jdbc:mysql://localhost/javadev?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8";
+		final String USERNAME = "root";
+		final String PASSWORD = "1234";
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+		System.out.println("연결 이상 없음");
+		
+		return con;
+	}
+}

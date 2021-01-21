@@ -1,0 +1,5 @@
+package com.java.jaejin.model;
+
+public class DbUtils {
+
+}

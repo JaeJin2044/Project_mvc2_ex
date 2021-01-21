@@ -1,0 +1,34 @@
+package com.java.dto;
+
+import java.sql.Timestamp;
+
+public class BoardDTO {
+	//mvc_board의 컬럼 
+	int bID;
+	String bName;
+	String bTitle;
+	String bContent;
+	Timestamp bDate;
+	int bHit;
+	int bGroup;
+	int bStep;
+	int bIndent;
+
+	//기본 생성자
+	public BoardDTO() {}
+
+	public BoardDTO(int bID, String bName, String bTitle, String bContent, Timestamp bDate, int bHit, int bGroup,
+			int bStep, int bIndent) {
+		this.bID = bID;
+		this.bName = bName;
+		this.bTitle = bTitle;
+		this.bContent = bContent;
+		this.bDate = bDate;
+		this.bHit = bHit;
+		this.bGroup = bGroup;
+		this.bStep = bStep;
+		this.bIndent = bIndent;
+	}
+	
+	
+}

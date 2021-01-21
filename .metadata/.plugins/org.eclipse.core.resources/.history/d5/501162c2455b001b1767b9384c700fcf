@@ -1,0 +1,52 @@
+package com.java.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.java.dto.BoardDTO;
+import com.java.jaejin.dbutils.DbUtils;
+
+public class BoardDAO {
+
+	public List<BoardDTO> selBoardList(){
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		List<BoardDTO> vo = new ArrayList();
+		
+		String sql = "SELECT * FROM mvc_board";
+		
+		try {
+			con = DbUtils.getCon();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int bId = rs.getInt("bId");
+				String bName = rs.getString("bName");
+				String bTitle = rs.getString("bTitle");
+				String bContent = rs.getString("bContent");
+				Timestamp bDate = rs.getTimestamp("bDate");
+				int bHit = rs.getInt("bHit");
+				int bGroup = rs.getInt("bGroup");
+				int bStep = rs.getInt("bStep");
+				int bIndent = rs.getInt("bIndent");
+				B
+				
+			}
+			
+		} catch (Exception e) {
+			
+		}
+		
+		
+		
+		return null;
+	}
+}
