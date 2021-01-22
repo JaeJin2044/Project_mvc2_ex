@@ -11,7 +11,54 @@ import com.java.dto.BoardDTO;
 import com.java.jaejin.dbutils.DbUtils;
 
 
+
 public class BoardDAO {
+	//글 수정하는 메소드 
+	public static void updateBoard(BoardDTO param) {
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		String sql = "update mvc_board set bName = ?, bTitle = ?, bContent = ? "
+				+" where bId = ?";
+		
+		try {
+			con = DbUtils.getCon();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, param.getbName());
+			ps.setString(2, param.getbTitle());
+			ps.setString(3, param.getbContent());
+			ps.setInt(4, param.getbId());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DbUtils.close(con, ps);
+		}
+	}
+	
+	// 글 삭제 하는 메소드 
+	public static void deleteBoard(BoardDTO param) {
+		Connection con = null;
+		PreparedStatement  ps = null;
+		
+		String sql = "delete from mvc_board where bId= ?";
+		
+		try {
+			con = DbUtils.getCon();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, param.getbId());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DbUtils.close(con, ps);
+		}
+		
+	}
+	
+	
+	
+	
 
 	//리스트에 모든 자료 뿌려주는 메소드 
 	public static List<BoardDTO> selBoardList(){

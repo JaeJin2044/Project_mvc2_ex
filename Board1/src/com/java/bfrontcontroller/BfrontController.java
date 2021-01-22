@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.java.command.BCommand;
 import com.java.command.BContentCommand;
+import com.java.command.BDeleteCommand;
 import com.java.command.BListCommand;
+import com.java.command.BModifyCommand;
 import com.java.command.BWriteCommand;
 
 @WebServlet("*.do")
@@ -46,7 +48,6 @@ public class BfrontController extends HttpServlet {
 			
 		}else if(uri.equals("/write_view.do")) {
 			viewPage = "/WEB-INF/jsp/write_view.jsp";
-			
 		}else if(uri.equals("/write.do")) {
 			command = new BWriteCommand();
 			command.execute(request, response);
@@ -55,11 +56,15 @@ public class BfrontController extends HttpServlet {
 			command = new BContentCommand();
 			command.execute(request, response);
 			viewPage ="/WEB-INF/jsp/content_view.jsp";
+		}else if(uri.equals("/modify.do")) {
+			command = new BModifyCommand();
+			command.execute(request, response);
+			viewPage = "/list.do";
+		}else if(uri.equals("/delete.do")) {
+			command = new BDeleteCommand();
+			command.execute(request, response);
+			viewPage = "/list.do";
 		}
-		
-		
-		
-		
 		
 		
 		//이부분 sendRedirect부분 안넣어주니까 write하고 나서 주소 값이 write.do라.. 새로고침 누르면 아까 입력했던 값이 또 추가됨... ㅠㅠ

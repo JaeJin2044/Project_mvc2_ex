@@ -19,6 +19,11 @@
 		text-align: center;
 	}
 	
+	a{
+	text-decoration: none;
+	color: green;
+}
+	
 
 </style>
 </head>
@@ -43,8 +48,17 @@
 		</tr>
 	</c:forEach>
 		<tr>
-			<td colspan="5"> <a href="/write_view.do">글작성</a> </td>
+			<td colspan="5"> <a href="/write_view.do">글작성</a></td>
 		</tr>
+	
+		<tr>
+			<td colspan="5">
+		<c:forEach begin="1" end="5" var="i">
+			 <a href="/write_view.do">${i}</a> 
+		</c:forEach>	
+			 </td>
+		</tr>
+	
 	</table>
 	
 	

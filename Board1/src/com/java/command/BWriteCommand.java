@@ -10,16 +10,26 @@ public class BWriteCommand implements BCommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		
 		String bName = request.getParameter("bName");
 		String bTitle = request.getParameter("bTitle");
 		String bContent = request.getParameter("bContent");
+		System.out.println(bName);
+		System.out.println(bTitle);
+		System.out.println(bContent);
 		
-		BoardDTO dto = new BoardDTO();
-		dto.setbName(bName);
-		dto.setbTitle(bTitle);
-		dto.setbContent(bContent);
+		if(bName!=null) {
+			BoardDTO dto = new BoardDTO();
+			dto.setbName(bName);
+			dto.setbTitle(bTitle);
+			dto.setbContent(bContent);
+			BoardDAO.insertBoard(dto);
+		}else {
+			System.out.println("null이므로 실행 x");
+		}
 		
-		BoardDAO.insertBoard(dto);
+		
 
 	}
 
