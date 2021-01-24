@@ -19,12 +19,14 @@ public class DbUtil {
 
 	
 	public static Connection getCon() throws Exception {
-		final String URL = "jdbc:mysql://localhost/javadev?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8";
-		final String USERNAME = "root";
-		final String PASSWORD = "1234";
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		
+		final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+		final String USERNAME = "scott";
+		final String PASSWORD = "tiger";
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-		System.out.println("연결 이상 없음");
+		System.out.println("연음");
 		
 		return con;
 	}
