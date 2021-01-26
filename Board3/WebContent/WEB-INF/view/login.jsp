@@ -9,14 +9,16 @@
 </head>
 <body>
 	<div class="container">
-        <form id="login-form" method="get" action="/front/join.html">
+        <form id="login-form" method="post" action="/loginOk">
             <div class="form-title">
                 <h2>LOGO</h2>
             </div>
+            
             <div class="form-input">
-                <input class="login-input"type="text" placeholder="ID">
-                <input class="login-input"type="password" placeholder="password">
+                <input class="login-input"type="text" placeholder="ID" name="user_id">
+                <input class="login-input"type="password" placeholder="password" name="user_pw">
             </div>
+            
             <div class="form-btn">
                 <input class="login-btn" type="submit" value="Login">
                 <a href="/join"><input class="login-btn" type="button" value="Join"></a>

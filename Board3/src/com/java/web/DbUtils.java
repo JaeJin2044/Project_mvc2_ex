@@ -22,18 +22,20 @@ public class DbUtils {
 	}
 	
 	
-	public static void close(Connection con ,PreparedStatement ps) throws Exception {
+	public static void close(Connection con ,PreparedStatement ps) {
 		close(con,ps,null);
 	}
 
 	
-	public static void close(Connection con , PreparedStatement ps, ResultSet rs) throws Exception {
+	public static void close(Connection con , PreparedStatement ps, ResultSet rs) {
 		
 		try {
 			if(rs!=null) {rs.close();}
 			if(ps!=null) {ps.close();}
 			if(con!=null) {con.close();}
-		} catch (Exception e) { e.printStackTrace();}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	
 	}
 	

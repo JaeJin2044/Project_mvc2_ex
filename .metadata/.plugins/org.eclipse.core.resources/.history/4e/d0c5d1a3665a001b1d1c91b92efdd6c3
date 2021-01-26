@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Board1
-Bundle-SymbolicName: Board1
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: Board1.jar,
- jdk-11.0.7/lib/mysql-connector-java-8.0.23.jar
